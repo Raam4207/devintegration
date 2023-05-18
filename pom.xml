@@ -19,7 +19,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <artifactId>junit</artifactId>  
       <version>4.8.2</version>  
       <scope>test</scope>  
-    </dependency>  
+    </dependency> 
+    <finalName>devintegration<finalName>
   </dependencies>  
   
 </project>  
