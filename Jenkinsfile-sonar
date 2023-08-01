@@ -7,7 +7,7 @@ pipeline{
         stage('Build'){
           steps{
               script{
-              sh 'mvn clean install'
+              sh 'mvn install'
               } 
              }
           }
@@ -15,7 +15,7 @@ pipeline{
           steps{
               script{
               echo "Sonar check"
-              sh "mvn clean verify sonar:sonar -Dsonar.host.url=http://192.168.29.21:9000 -Dsonar.token=sqp_9300369d7101af9fb6c79082263960fdee894125 -Dsonar.projectKey=Java-test-sonarqube -Dsonar.projectName='Java-test-sonarqube'"
+              sh "mvn verify sonar:sonar -Dsonar.host.url=http://192.168.29.21:9000 -Dsonar.token=sqp_9300369d7101af9fb6c79082263960fdee894125 -Dsonar.projectKey=Java-test-sonarqube -Dsonar.projectName='Java-test-sonarqube'"
                }
               }
           }
