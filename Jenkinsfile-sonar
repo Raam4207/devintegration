@@ -6,16 +6,18 @@ pipeline{
     stages{
         stage ('Build'){
           steps{
+              script{
               sh 'mvn clean install'
-                echo "Sonar check"
               } 
+             }
           }
         stage ('Sonarqube analysis'){
           steps{
+              script{
               echo "Sonar check"
-              sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=Java-test-sonarqube -Dsonar.projectName='Java-test-sonarqube''
-               
-              } 
+              sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Java-test-sonarqube -Dsonar.projectName='Java-test-sonarqube'"
+               }
+              }
           }
     }
 }
